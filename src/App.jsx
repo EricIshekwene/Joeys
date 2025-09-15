@@ -1,36 +1,35 @@
+import { useState, useEffect } from 'react'
 import './App.css'
-
+import logo from './assets/srcimages/Joey_White_Logo.png'
+import logo_with_name from './assets/srcimages/Joeys_White_Logo_With_Name (1).png'
+import background from './assets/srcimages/Gemini_Table.png'
+import { FaInstagram } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
+import { FaTiktok } from "react-icons/fa";
+import Navbar from './components/Navbar'
 function App() {
+  const isLarge = useIsLarge();
+  function useIsLarge() {
+    const [isLarge, setIsLarge] = useState(window.innerWidth >= 1024);
+  
+    useEffect(() => {
+      const handleResize = () => setIsLarge(window.innerWidth >= 1024);
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }, []);
+  
+    return isLarge;
+  }
+  
   return (
     <>
-      <nav className="w-full h-200 bg-black border-4 border-green-500 flex items-start p-6 fixed top-0 left-0">
-        <div className="flex flex-col border-4 border-blue-500 gap-4 items-start justify-center w-full">
-
-          <div className="flex border-4 border-red-500 justify-between w-full items-center p-3">
-            <div className="flex border-4 border-blue-500 gap-4 flex-row items-start justify-start w-1/3">
-              <p className="text-white text-lg font-bold">About Us</p>
-              <p className="text-white text-lg font-bold">Amenities</p>
-              <p className="text-white text-lg font-bold">Reservations</p>
-            </div>
-            <div className="flex border-4 border-blue-500 flex-col items-center justify-center w-1/3">
-              <p className="text-white text-xl font-bold">Gemini</p>
-              <p className="text-white text-sm font-bold">Gemini</p>
-            </div>
-            <div className="flex border-4 border-green-500 gap-4 flex-row items-end justify-end w-1/3">
-              <p className="text-white text-lg font-bold">instagram</p>
-              <p className="text-white text-lg font-bold">facebook</p>
-              <p className="text-white text-lg font-bold">tiktok</p>
-            </div>
-
-
-          </div>
-          <div className="flex border-4 border-red-500 justify-between w-full items-center p-3">
-            
-          </div>
-        </div>
-      </nav>
-
-
+    {isLarge && <Navbar />}
+     
+     
+      <div className=" h-200 bg-gray-100 border-4 border-red-500">
+        <p className="p-8">This is content below the nav to test scrolling</p>
+      </div>
+     
     </>
   )
 }
