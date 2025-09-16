@@ -7,18 +7,19 @@ import { FaInstagram } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { FaTiktok } from "react-icons/fa";
 import Navbar from './components/Navbar'
+import EventCard from './components/subcomponents/EventCard'
+import Events from './components/Events'
 function App() {
-  
-  
+ 
+
   return (
     <>
-     <Navbar />
-     
-     
-      <div className=" h-200 bg-gray-100 border-4 border-red-500">
-        <p className="p-8">This is content below the nav to test scrolling</p>
-      </div>
-     
+      
+      <Navbar />
+
+      <Events />
+          
+
     </>
   )
 }

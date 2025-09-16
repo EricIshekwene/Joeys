@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { FaBars } from "react-icons/fa";
-
+import { FaInstagram } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
+import { FaTiktok } from "react-icons/fa";
 export default function NavbarSlideOut() {
   const [open, setOpen] = useState(false);
 
@@ -21,7 +23,7 @@ export default function NavbarSlideOut() {
         {menuItems.map((item, index) => (
           <p
             key={item}
-            className={`mr-4 text-sm text-white font-semibold cursor-pointer transition-all duration-500 ease-in-out
+            className={`mr-4 text-sm text-white font-semibold cursor-pointer transition-all duration-500 ease-in-out flex items-center gap-2
               ${open ? "translate-x-0 opacity-100" : "translate-x-20 opacity-0"}
             `}
             style={{
@@ -29,6 +31,7 @@ export default function NavbarSlideOut() {
             }}
           >
             {item}
+            
           </p>
         ))}
       </div>
