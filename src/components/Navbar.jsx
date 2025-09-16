@@ -4,7 +4,20 @@ import { FaFacebook } from "react-icons/fa";
 import { FaTiktok } from "react-icons/fa";
 import logo from '../assets/srcimages/Joey_White_Logo.png'
 import background from '../assets/srcimages/Gemini_Table.png'
+import NavbarDropdown from './subcomponents/Dropdown'
 const Navbar = () => {
+  const isLarge = useIsLarge();
+  function useIsLarge() {
+    const [isLarge, setIsLarge] = useState(window.innerWidth >= 1024);
+  
+    useEffect(() => {
+      const handleResize = () => setIsLarge(window.innerWidth >= 1024);
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }, []);
+  
+    return isLarge;
+  }
   const [showBorders, setShowBorders] = useState(true);
   
   // Map color names to full Tailwind border color classes
@@ -23,12 +36,12 @@ const Navbar = () => {
   return (
     <>
       <button
-        className="fixed top-4 right-4 z-50 px-4 py-2 bg-gray-800 text-white rounded"
+        className="fixed  bottom-4 left-4 z-50 px-4 py-2 bg-gray-800 text-white rounded"
         onClick={() => setShowBorders((prev) => !prev)}
       >
         {showBorders ? 'Hide Borders' : 'Show Borders'}
       </button>
-      <div className={`w-full h-220 bg-black ${borderClass('green')} flex items-start   bg-cover bg-center`} style={{ backgroundImage: `url(${background})` }}>
+      {isLarge && <div className={`w-full h-220 bg-black ${borderClass('green')} flex items-start   bg-cover bg-center`} style={{ backgroundImage: `url(${background})` }}>
         <div className="w-full h-full bg-black/50 p-6 flex items-start justify-center">
           <div className={`flex flex-col ${borderClass('blue')} gap-4 items-start justify-center w-full`}>
             <div className={`flex ${borderClass('red')} justify-between w-full items-center p-3`}>
@@ -63,7 +76,35 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div>}
+      {!isLarge && <div className={`w-full h-130 bg-black ${borderClass('green')} flex items-start   bg-cover bg-center`} style={{ backgroundImage: `url(${background})` }}>
+        <div className="w-full h-full bg-black/50  flex items-start justify-center">
+          <div className={`flex flex-col ${borderClass('blue')}  items-start  w-full h-full`}>
+            <div className={`flex ${borderClass('red')} justify-between w-full items-center p-3`}>
+              <NavbarDropdown />
+            <div className={`flex ${borderClass('blue')} flex-col items-center justify-center p-3 hover:scale-110 transition-transform duration-300 ease-in-out`}>
+                <p className="text-white text-xl font-bold">Joey's</p>
+                <p className="text-white text-sm font-bold">Place</p>
+              </div>
+              
+            </div>
+
+            <div className={`flex ${borderClass('red')} flex-col  items-center justify- w-full items-center p-3 mt-15 gap-15`}>
+              <div
+                className={` ${borderClass('blue')} flex flex-shrink gap-4 flex-row items-start justify-start aspect-[11/10] h-50`}
+                style={{ width: 'auto' }}
+              >
+                <img src={logo} alt="logo" className="w-full  hover:scale-110 transition-transform duration-300 ease-in-out h-full" />
+              </div>
+              <div className={`flex ${borderClass('blue')} flex-col items-center justify-center w-full items-center p-3  hover:scale-110 transition-transform duration-300 ease-in-out `}>
+                <p onClick={() => window.open('https://www.google.com/maps/place/Joey\'s+Place/@40.0098344,-83.0130828,17z/data=!3m2!4b1!5s0x88388ea39423c41b:0xd2908a5f09dcc12b!4m6!3m5!1s0x88388f1726285a71:0x205a3209310a2d8!8m2!3d40.0098344!4d-83.0105025!16s%2Fg%2F11yh6f1wr2?entry=ttu&g_ep=EgoyMDI1MDkxMC4wIKXMDSoASAFQAw%3D%3D  ')} className="text-white text-sm font-bold">2333 N High St, Columbus, OH 43202</p>
+                <p onClick={() => window.open('tel:6144293524')} className="text-white text-sm font-bold">(614)-429-3524</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>}
     </>
   )
 }

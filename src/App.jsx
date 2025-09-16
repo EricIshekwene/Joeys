@@ -8,22 +8,11 @@ import { FaFacebook } from "react-icons/fa";
 import { FaTiktok } from "react-icons/fa";
 import Navbar from './components/Navbar'
 function App() {
-  const isLarge = useIsLarge();
-  function useIsLarge() {
-    const [isLarge, setIsLarge] = useState(window.innerWidth >= 1024);
   
-    useEffect(() => {
-      const handleResize = () => setIsLarge(window.innerWidth >= 1024);
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }, []);
-  
-    return isLarge;
-  }
   
   return (
     <>
-    {isLarge && <Navbar />}
+     <Navbar />
      
      
       <div className=" h-200 bg-gray-100 border-4 border-red-500">
