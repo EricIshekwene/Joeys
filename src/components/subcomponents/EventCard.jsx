@@ -2,8 +2,8 @@ import React from 'react';
 
 export default function EventCard({ className = "" }) {
   return (
-    <div className={`mt-6 w-72 h-100 bg-white rounded-3xl shadow-lg overflow-hidden p-3 ${className}`}>
-      <div className="relative h-48 shadow-lg bg-gray-500 rounded-3xl">
+    <div  className={`mt-6 w-72 h-100 bg-white rounded-3xl shadow-lg overflow-hidden p-3 ${className}`}>
+      <div  className="relative h-48 shadow-lg bg-gray-500 rounded-3xl bg-cover bg-center bg-no-repeat">
         <img
           src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?auto=format&fit=crop&w=800&q=80"
           alt="card-image"

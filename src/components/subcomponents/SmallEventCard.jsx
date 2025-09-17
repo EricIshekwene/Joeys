@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function SmallEventCard({ className = "" }) {
   return (
-    <div className={`mt-6 w-40 h-70 bg-white rounded-3xl shadow-lg overflow-hidden p-3 ${className}`}>
+    <div className={`w-40 h-70 bg-white rounded-3xl shadow-md overflow-hidden p-3 ${className}`}>
       <div className="relative h-30 shadow-lg bg-gray-500 rounded-3xl">
         <img
           src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?auto=format&fit=crop&w=800&q=80"

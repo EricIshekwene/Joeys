@@ -4,13 +4,14 @@ import { FaFacebook } from "react-icons/fa";
 import { FaTiktok } from "react-icons/fa";
 import EventCard from './subcomponents/EventCard'
 import SmallEventCard from './subcomponents/SmallEventCard'
+
 export default function Events() {
     const isLarge = useIsLarge();
     function useIsLarge() {
-        const [isLarge, setIsLarge] = useState(window.innerWidth >= 1024);
+        const [isLarge, setIsLarge] = useState(window.innerWidth >= 820);
 
         useEffect(() => {
-            const handleResize = () => setIsLarge(window.innerWidth >= 1024);
+            const handleResize = () => setIsLarge(window.innerWidth >= 820);
             window.addEventListener("resize", handleResize);
             return () => window.removeEventListener("resize", handleResize);
         }, []);
@@ -53,16 +54,16 @@ export default function Events() {
                 <p className={`text-5xl  mt-10`}>Events</p>
                 <p className={`text-xl mt-2`}>Take a look at our Upcoming events</p>
                 <div className="relative w-full p-2">
-                    <div
-                        className={`flex flex-row p-2 gap-2 flex-wrap  w-full items-center justify-center`}
-                    >
-                        <SmallEventCard />
-                        <SmallEventCard />
-                        <SmallEventCard />
+                    <div className="h-full p-4 overflow-x-auto overflow-y-hidden">
+                        <div className="flex flex-row gap-4 items-center justify-center snap-x snap-mandatory scroll-smooth">
+                            <SmallEventCard className="shrink-0 snap-start hover:scale-105 transition-transform duration-300 ease-in-out" />
+                            <SmallEventCard className="shrink-0 snap-start hover:scale-105 transition-transform duration-300 ease-in-out" />
+                            <SmallEventCard className="shrink-0 snap-start hover:scale-105 transition-transform duration-300 ease-in-out" />
+                        </div>
                     </div>
 
-
-
+                    {/* right-edge blur */}
+                    <div className="pointer-events-none absolute top-0 right-0 w-16 h-full bg-gradient-to-l from-gray-100 to-transparent" />
                 </div>
                 <div className={`flex flex-row gap-8 p-2 h-20 items-center justify-center`}>
                     <FaInstagram onClick={() => window.open('https://www.instagram.com/joeysplace/')} className="text-4xl hover:scale-150  transition-transform duration-300 ease-in-out" />
