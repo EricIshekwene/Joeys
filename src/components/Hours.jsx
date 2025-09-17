@@ -3,7 +3,7 @@ import TypographyBackground from '../assets/srcimages/TypographyBackground.png';
 export default function Hours() {
     return (
         <div 
-  className="w-full h-100 bg-gray-100 relative flex items-center justify-center" 
+    className="w-full h-100 bg-gray-100 relative flex items-center justify-center" 
  
 >
 

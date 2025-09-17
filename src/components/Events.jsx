@@ -21,13 +21,13 @@ export default function Events() {
 
     return (
         <>
-            {isLarge ? <div className={`h-200  bg-gray-100 p-6 flex flex-col items-center justify-center`}>
-                <div className={`flex flex-row p-6 w-full h-160 items-center justify-between`}>
-                    <div className={`flex flex-col flex-wrap ml-12 w-2/5 h-full items-start justify`}>
-                        <h2 className={`text-5xl xl:text-7xl ml-6 mt-30 font-bold`}>Events</h2>
-                        <p className={`text-xl xl:text-2xl ml-6 w-2/3 xl:w-1/2 mt-6`}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
-                        <p className={`text-md xl:text-lg ml-6 w-2/3 xl:w-1/2  mt-6`}>Follow Our Socials to stay updated</p>
-                        <div className={`flex flex-row ml-6 gap-6 mt-6`}>
+            {isLarge ? <div className={`h-150  bg-gray-100     flex flex-col items-center justify-center`}>
+                <div className={`flex flex-row p-6 w-full h-160   items-center justify-between`}>
+                    <div className={`flex flex-col flex-wrap ml-12   w-2/5 h-full items-start justify`}>
+                        <h2 className={`text-5xl xl:text-7xl ml-6   mt-30 font-bold`}>Events</h2>
+                        <p className={`text-xl xl:text-2xl ml-6 w-2/3  xl:w-1/2 mt-6`}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+                        <p className={`text-md xl:text-lg ml-6 w-2/3  xl:w-1/2  mt-6`}>Follow Our Socials to stay updated</p>
+                        <div className={`flex  flex-row ml-6 gap-6 mt-6`}>
                             <FaInstagram onClick={() => window.open('https://www.instagram.com/joeysplace/')} className="text-2xl xl:text-4xl hover:scale-150  transition-transform duration-300 ease-in-out" />
                             <FaFacebook onClick={() => window.open('https://www.facebook.com/joeysplace/')} className="text-2xl xl:text-4xl hover:scale-150 transition-transform duration-300 ease-in-out" />
                             <FaTiktok onClick={() => window.open('https://www.tiktok.com/@joeysplace/')} className="text-2xl xl:text-4xl hover:scale-150 transition-transform duration-300 ease-in-out" /></div>
@@ -74,8 +74,7 @@ export default function Events() {
 
 
             </div>}
-            {/* iphone */}
-
+            
 
 
 
