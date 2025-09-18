@@ -15,6 +15,7 @@ import Map from './components/subcomponents/Map'
 //import { AuroraBackground } from './components/ui/shadcn-io/aurora-background';
 import FlowingMenu from './components/subcomponents/FlowingMenu'
 import AboutSection from './components/AboutSection'
+
 function App() {
 
   const menuItems = [

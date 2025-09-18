@@ -5,6 +5,7 @@ import { FaTiktok } from "react-icons/fa";
 import logo from '../assets/srcimages/Joey_White_Logo.png'
 import background from '../assets/srcimages/Gemini_Table.png'
 import NavbarDropdown from './subcomponents/Dropdown'
+import CardNav from './subcomponents/CardNav'
 const Navbar = () => {
   const isLarge = useIsLarge();
   function useIsLarge() {
@@ -69,6 +70,8 @@ const Navbar = () => {
               </div>
               
             </div>
+
+
 
             <div className={`flex flex-col  items-center justify- w-full items-center p-3 mt-15 gap-15`}>
               <div
